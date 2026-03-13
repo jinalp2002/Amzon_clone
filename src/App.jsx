@@ -3,6 +3,8 @@ import reactLogo from './assets/react.svg'
 import viteLogo from '/vite.svg'
 import './App.css'
 import Header from './components/Header'
+import Home from './components/Screen/Home'
+import Footer from './components/Footer'
 // import Image from './assets/amazon_logo.png'
 
 function App() {
@@ -16,6 +18,7 @@ function App() {
         </a>
       </div> */}
       <Header />
+      <Home />
 
 
     </>
