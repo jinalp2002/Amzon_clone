@@ -11,7 +11,7 @@ function Header() {
 
     return (
         <div>
-            <header className='bg-black  '>
+            <header className=' bg-black  z-50 '>
                 <div className='flex flex-row border border-transparent '>
                     <div>
                         <img src={Image} alt="Logo" className="h-[66px] justify-start pl-0 flex border border-transparent hover:border-white cursor-pointer" />
@@ -26,7 +26,7 @@ function Header() {
                                 onClick={() => { setOpen(!open) }}
                                 className='bg-zinc-200  w-12 ml-8 mt-3 text-center text-lg px-2 py-2 rounded-l-md'>All
                                 <span className="text-sm">▼
-                                    {open && <div className='text-black  absolute h-22 w-60 text-left'>
+                                    {open && <div className='text-black  absolute h-22 w-60 text-left z-50'>
                                         <ul className='mb-8 mt-3 bg-slate-100 text-xl'>
                                             <li className='border border-transparent hover:border-black cursor-pointer'>Books</li>
                                             <li className='border border-transparent hover:border-black cursor-pointer'>Electronics</li>
@@ -64,7 +64,7 @@ function Header() {
                             🌐 EN ▼
                         </button>
                         {Langopen && <div>
-                            <ul className='text-black bg-slate-100 absolute w-20 mt-3 text-xl '>
+                            <ul className='text-black bg-slate-100 absolute w-20 mt-3 text-xl z-50'>
                                 <li className='border border-transparent hover:border-black cursor-pointer'>Hindi</li>
                                 <li className='border border-transparent hover:border-black cursor-pointer'>Marathi</li>
                                 <li className='border border-transparent hover:border-black cursor-pointer'>Gujarati</li>
