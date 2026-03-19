@@ -18,10 +18,10 @@ function App() {
           <img src={Image} alt="" className="w-32 h-auto" />
         </a>
       </div> */}
-      <Header />
-      {/* <Home /> */}
+      {/* <Header />
+      <Home />
       <GiftCards />
-      <Footer />
+      <Footer /> */}
 
     </>
   )

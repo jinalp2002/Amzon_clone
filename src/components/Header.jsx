@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
 import Image from '../assets/amazon_logo.png';
-// import { Link } from "react-router-dom";
+import { Link } from "react-router-dom";
 import { FaShoppingCart, FaBars } from "react-icons/fa";
 
 
 function Header() {
     const [open, setOpen] = useState(false)
     const [Langopen, setLangOpen] = useState(false)
+    const [signOpen, setSignOpen] = useState(false)
 
 
     return (
@@ -14,7 +15,10 @@ function Header() {
             <header className=' bg-black  z-50 '>
                 <div className='flex flex-row border border-transparent '>
                     <div>
-                        <img src={Image} alt="Logo" className="h-[66px] justify-start pl-0 flex border border-transparent hover:border-white cursor-pointer" />
+                        <Link
+                            to="/Home">
+                            <img src={Image} alt="Logo" className="h-[66px] justify-start pl-0 flex border border-transparent hover:border-white cursor-pointer" /></Link>
+
                     </div>
                     <div className='ml-7  border border-transparent hover:border-white cursor-pointer'>
                         <p className='text-white mt-3'>Dilevery to </p>
@@ -71,16 +75,64 @@ function Header() {
                                 <li className='border border-transparent hover:border-black cursor-pointer'>Urdu</li>
                             </ul></div>}
                     </div>
-                    {/* Link tage use after down react router dom for go one page to the another */}
+                    <div
+                        onClick={() => setSignOpen(!signOpen)}
+                        className='ml-7 relative group inline-block'>
+                        <div className='border border-transparent hover:border-white cursor-pointer h-[65px]'>
+                            <p className='text-slate-100 text-sm mt-2 ml-2'>Hello, sign in</p>
+                            <p className='text-white text-sm px-2 py-1 ml-0'>Account and list</p>
+                        </div>
 
-                    {/* <Link to="/login" className="ml-7 border border-transparent hover:border-white cursor-pointer h-[65px] block">
-                        <p className="text-slate-100 text-sm mt-2">Hello, sign in</p>
-                        <p className="text-slate-100 font-bold text-sm">Account & Lists</p>
-                    </Link> */}
-                    <div className='ml-7 border border-transparent hover:border-white cursor-pointer h-[65px]' >
-                        <p className='text-slate-100 tet-sm mb-0 mt-2'>Hello, sign in</p>
-                        <p className='text-slate-100 font-bold text-sl'>Account and list</p>
+                        {/* Dropdown */}
+                        {signOpen && <div className='bg-white absolute right-0 top-full mt-2 w-[500px] shadow-lg rounded z-50 p-4'>
+
+                            {/* Sign In */}
+                            <div className='flex flex-col items-center mb-3 w-full'>
+                                <Link
+                                    to="/auth/signin"
+                                    className='bg-yellow-400 hover:bg-yellow-500 px-4 py-2 rounded font-semibold w-full text-center block'>Sign In
+                                </Link>
+
+
+                                <p className='text-black mt-2 text-sm'>
+                                    New customer?
+                                    <span className='text-blue-500 underline hover:text-red-500 cursor-pointer ml-1'>
+                                        Start here.
+                                    </span>
+                                </p>
+                            </div>
+
+                            <div className="border-t border-gray-300 my-2"></div>
+
+                            {/* Content */}
+                            <div className="flex">
+
+                                {/* Left */}
+                                <div className='text-black pr-4'>
+                                    <p className='font-bold text-lg'>Your Lists</p>
+                                    <p className='hover:underline hover:text-red-400 cursor-pointer'>Create a List</p>
+                                    <p className='hover:underline hover:text-red-400 cursor-pointer'>Find a List or Registry</p>
+                                </div>
+
+                                {/* Divider */}
+                                <div className="w-[1px] bg-gray-300 mx-4"></div>
+
+                                {/* Right */}
+                                <div className="text-black">
+                                    <h1 className='font-bold text-lg '>Your Account</h1>
+                                    <p className='hover:underline cursor-pointer hover:text-red-400'>Account</p>
+                                    <p className='hover:underline cursor-pointer hover:text-red-400'>Orders</p>
+                                    <p className='hover:underline cursor-pointer hover:text-red-400'>Recommendations</p>
+                                    <p className='hover:underline cursor-pointer hover:text-red-400'>Browsing History</p>
+                                    <p className='hover:underline cursor-pointer hover:text-red-400'>Shopping Preferences</p>
+                                </div>
+
+                            </div>
+
+                        </div>}
+
                     </div>
+
                     <div className=' ml-14 border border-transparent hover:border-white cursor-pointer h-[65px]'>
                         <p className='text-slate-100 tet-sm mb-0 mt-2'>return</p>
                         <p className='text-slate-100 font-bold text-sl'>& order</p>
@@ -116,9 +168,10 @@ function Header() {
                             <div className='flex items-center ml-7 text-white border border-transparent hover:border-white cursor-pointer text-sm gap-1'>
                                 Prime  <span className='text-gray-400 text-[10px] mt-1 '> ▼ </span>
                             </div>
-                            <div className='flex items-center ml-7 text-white border border-transparent hover:border-white cursor-pointer text-sm gap-1'>
-                                Gift card <span className='text-gray-400 text-[10px] mt-1 '> ▼ </span>
-                            </div>
+                            <Link
+                                to="/GiftCard"
+                                className='flex items-center ml-7 text-white border border-transparent hover:border-white cursor-pointer text-sm gap-1'>Gift card <span className='text-gray-400 text-[10px] mt-1 '> ▼ </span></Link>
+
                             <div className='flex items-center ml-7 text-white border border-transparent hover:border-white cursor-pointer text-sm'>
                                 Registry
                             </div>
