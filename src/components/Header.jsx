@@ -8,6 +8,7 @@ function Header() {
     const [open, setOpen] = useState(false)
     const [Langopen, setLangOpen] = useState(false)
     const [signOpen, setSignOpen] = useState(false)
+    const [openMenu, setOpenMenu] = useState(false)
 
 
     return (
@@ -150,8 +151,53 @@ function Header() {
                     <div className='text-white h-8'>
                         <div className='text-white flex flex-row'>
                             <div className='flex items-center gap-1 h-8 text-white border border-transparent hover:border-white cursor-pointer ml-5 text-sm'>
-                                <FaBars size={15} />
-                                <div>All</div>
+
+                                <button
+                                    onClick={() => setOpenMenu(true)}
+                                    className="text-white flex"
+                                >
+                                    <FaBars size={15} className='mt-1 mr-1' />
+                                    All
+                                </button>
+
+                                {openMenu && (
+                                    <div
+                                        onClick={() => setOpenMenu(false)}
+                                        className="fixed inset-0 bg-black bg-opacity-50 z-40"
+                                    ></div>
+                                )}
+
+                                {/* Sidebar */}
+                                <div
+                                    onClick={(e) => e.stopPropagation()}
+                                    className={`fixed top-0 left-0 h-full w-72 bg-white z-50 transform transition-transform duration-300 
+                                    ${openMenu ? "translate-x-0" : "-translate-x-full"}`}>
+
+                                    {/* Header */}
+                                    <div className="bg-slate-800 text-white p-4 flex justify-between items-center">
+                                        <p className="font-semibold">Hello, sign in</p>
+                                        <button onClick={() => setOpenMenu(false)}>✕</button>
+                                    </div>
+
+                                    {/* Content */}
+                                    <div className="p-4 overflow-y-auto h-full">
+
+                                        <h2 className="font-bold mb-2 text-black">Digital Content & Devices</h2>
+                                        <p className="py-2 hover:bg-gray-100 cursor-pointer text-black">Prime Video</p>
+                                        <p className="py-2 hover:bg-gray-100 cursor-pointer text-black">Amazon Music</p>
+                                        <p className="py-2 hover:bg-gray-100 cursor-pointer text-black">Kindle E-readers & Books</p>
+                                        <p className="py-2 hover:bg-gray-100 cursor-pointer text-black">Amazon Appstore</p>
+
+                                        <hr className="my-4" />
+
+                                        <h2 className="font-bold mb-2">Shop by Department</h2>
+                                        <p className="py-2 hover:bg-gray-100 cursor-pointer text-black">Electronics</p>
+                                        <p className="py-2 hover:bg-gray-100 cursor-pointer text-black">Computers</p>
+                                        <p className="py-2 hover:bg-gray-100 cursor-pointer text-black">Smart Home</p>
+                                        <p className="py-2 hover:bg-gray-100 cursor-pointer text-black">Arts & Crafts</p>
+
+                                    </div>
+                                </div>
                             </div>
                             <div className='flex items-center ml-7 text-white border border-transparent hover:border-white cursor-pointer text-sm'>
                                 Amazon Haul
