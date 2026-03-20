@@ -218,9 +218,11 @@ function Header() {
                                 to="/GiftCard"
                                 className='flex items-center ml-7 text-white border border-transparent hover:border-white cursor-pointer text-sm gap-1'>Gift card <span className='text-gray-400 text-[10px] mt-1 '> ▼ </span></Link>
 
-                            <div className='flex items-center ml-7 text-white border border-transparent hover:border-white cursor-pointer text-sm'>
+                            <Link
+                                to="/Registry"
+                                className='flex items-center ml-7 text-white border border-transparent hover:border-white cursor-pointer text-sm'>
                                 Registry
-                            </div>
+                            </Link>
                             <Link
                                 to="/Groceries"
                                 className='flex items-center ml-7 text-white border border-transparent hover:border-white cursor-pointer text-sm gap-1'>Groceries <span className='text-gray-400 text-[10px] mt-1 '> ▼ </span></Link>
