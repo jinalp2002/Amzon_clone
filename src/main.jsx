@@ -8,7 +8,7 @@ import Home from './components/Screen/Home.jsx'
 import GiftCards from './components/Screen/GiftCards.jsx'
 import SignIn from './components/Screen/SignIn.jsx'
 import AuthLayout from './AuthLayout.jsx'
-import Groceries from './components/Screen/Groceries.jsx'
+import Registry from './components/Screen/Registry.jsx'
 
 const router = createBrowserRouter([
   {
@@ -28,8 +28,8 @@ const router = createBrowserRouter([
         element: <GiftCards />
       },
       {
-        path: "Groceries",
-        element: <Groceries />
+        path: "Registry",
+        element: <Registry />
       },
 
     ]
