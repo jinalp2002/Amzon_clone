@@ -221,9 +221,10 @@ function Header() {
                             <div className='flex items-center ml-7 text-white border border-transparent hover:border-white cursor-pointer text-sm'>
                                 Registry
                             </div>
-                            <div className='flex items-center ml-7 text-white border border-transparent hover:border-white cursor-pointer text-sm gap-1'>
-                                Groceries <span className='text-gray-400 text-[10px] mt-1 '> ▼ </span>
-                            </div>
+                            <Link
+                                to="/Groceries"
+                                className='flex items-center ml-7 text-white border border-transparent hover:border-white cursor-pointer text-sm gap-1'>Groceries <span className='text-gray-400 text-[10px] mt-1 '> ▼ </span></Link>
+
                             <div className='flex items-center ml-7 text-white border border-transparent hover:border-white cursor-pointer text-sm'>
                                 Today's Deals
                             </div>

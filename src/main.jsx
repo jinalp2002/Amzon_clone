@@ -8,6 +8,7 @@ import Home from './components/Screen/Home.jsx'
 import GiftCards from './components/Screen/GiftCards.jsx'
 import SignIn from './components/Screen/SignIn.jsx'
 import AuthLayout from './AuthLayout.jsx'
+import Groceries from './components/Screen/Groceries.jsx'
 
 const router = createBrowserRouter([
   {
@@ -26,10 +27,10 @@ const router = createBrowserRouter([
         path: "GiftCard",
         element: <GiftCards />
       },
-      //  {
-      //   path: "Sign_In_Up",
-      //   element: <SignIn />
-      // }, 
+      {
+        path: "Groceries",
+        element: <Groceries />
+      },
 
     ]
   }, {
